@@ -17,7 +17,7 @@ there are more things you can do with the other number keys, but they're kinda b
 ## To-do list
 
 * 1 - add interactions between blocks
-* 2 - make the world bigger
+* 2 - make the world bigger than 16 blocks (and also change the name after that)
 * 3 - add liquids
 
 
