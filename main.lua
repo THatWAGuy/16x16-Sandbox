@@ -380,7 +380,6 @@ function love.draw()
 
     i=1
     while(i<=ba)do
-
         f:draw(bc(slc+i)[5],22+(10*i),-14+uil)
         i=i+1
     end
