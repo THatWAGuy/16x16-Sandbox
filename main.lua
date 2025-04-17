@@ -378,6 +378,12 @@ function love.draw()
     f:draw(ui2,0,-16+uil)
     f:draw(ui1,0,0)
 
+    i=1
+    while(i<=ba)do
+
+        f:draw(bc(slc+i)[5],22+(10*i),-14+uil)
+        i=i+1
+    end
     --f:rgb(math.sin(flc)*128+128,128,0)
     f:rgb(255,math.sin(flc)*128+128,255)
     f:rgb(0,0,0)
@@ -391,13 +397,6 @@ function love.draw()
 
     f:drawr(void,16,16,flc/2,5,5)
     f:drawr(bc(slc)[5],16,16,flc/2,4,4)
-
-    i=1
-    while(i<=ba)do
-
-        f:draw(bc(slc+i)[5],22+(10*i),-14+uil)
-        i=i+1
-    end
     
     
     f:rgb(255,math.cos(flc)*128+128,255)
