@@ -2,6 +2,8 @@
 
 This game is still very early in development, it's only *barely* not a block painter.
 
+![game screenshot](Readmeassets/gamescreenshot_v1.2.png "game screenshot")
+
 ## Controls
 
 **Left click** to Place block
