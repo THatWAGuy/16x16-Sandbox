@@ -6,9 +6,9 @@ This game is still very early in development, it's only *barely* not a block pai
 
 **Minus** and **Plus** to cycle between blocks
 
-**4** to render air as a block
+**4** to toggle rendering air as a block
 
-**5** to disable music
+**5** to toggle music
 
 **6**, **7**, and **8** to change background color
 
