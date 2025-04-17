@@ -4,6 +4,10 @@ This game is still very early in development, it's only *barely* not a block pai
 
 ## Controls
 
+**Left click** to Place block
+
+**Right Click** to Break Block
+
 **Minus** and **Plus** to cycle between blocks
 
 **4** to toggle rendering air as a block
@@ -18,7 +22,8 @@ there are more things you can do with the other number keys, but they're kinda b
 
 * 1 - add interactions between blocks
 * 2 - make the world bigger than 16 blocks (and also change the name after that)
-* 3 - add liquids
+* 3 - add particles
+* 4 - add liquids
 
 
 ### ***THIS IS A SIDE-PROJECT!!***
