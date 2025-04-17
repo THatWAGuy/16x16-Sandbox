@@ -68,6 +68,9 @@ end
 function f:plays(data) -- load sound function ( f:lsfx(path) )
     return love.audio.play(data)
 end
+function f:stops() -- load sound function ( f:lsfx(path) )
+    return love.audio.stop()
+end
 
 --input
 
