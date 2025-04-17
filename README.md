@@ -31,3 +31,7 @@ there are more things you can do with the other number keys, but they're kinda b
 ### ***THIS IS A SIDE-PROJECT!!***
 
 ***Do not expect frequent updates.***
+
+## **Devlog**
+
+currently working on a devlog, link will be here when it's done
