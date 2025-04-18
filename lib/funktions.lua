@@ -10,6 +10,11 @@ function f:condraw(bool,rspr,rx,ry) -- conditional draw function ( f:draw(boolea
         love.graphics.draw(rspr,rx*g_s+g_x,ry*g_s+g_y,0,g_s,g_s)
     end
 end
+function f:conprint(bool,rtxt,rx,ry) -- print function ( f:print(text to print, x, y) )
+    if(bool)then
+        love.graphics.print(rtxt,rx*g_s+g_x,ry*g_s+g_y,0,g_s,g_s)
+    end
+end
 function f:drawwh(rspr,rx,ry,modw,modh) -- draw function with width and height parameters ( f:drawwh(sprite to draw, x, y) )
     love.graphics.draw(rspr,rx*g_s+g_x,ry*g_s+g_y,0,g_s*modw,g_s*modh)
 end

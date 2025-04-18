@@ -14,6 +14,8 @@ This game is still very early in development, it's only *barely* not a block pai
 
 **M** to give 999 of everything
 
+hold **TAB** to hide ui
+
 **4** to toggle rendering air as a block
 
 **5** to toggle music

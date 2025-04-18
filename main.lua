@@ -2,7 +2,9 @@
 
 function love.load()
 
-    uil=0
+    ui_draw=true
+
+    uil=-32
 
     love.mouse.setVisible(false)
 
@@ -10,7 +12,7 @@ function love.load()
     bgg=255
     bgb=255
 
-    version="v1.2 - The UI Update"
+    version="v1.2.1 - The UI Update"
 
     airrender=false
     musicplay=true
@@ -190,13 +192,13 @@ function love.update()
 
 
 
-    if(my>2)then
-        if(uil>0)then
-            uil=uil-1
+    if(my>3)then
+        if(uil>-16)then
+            uil=uil-2
         end
     else
         if(uil<16)then
-            uil=uil+1
+            uil=uil+2
         end
     end
  
@@ -244,7 +246,12 @@ function love.update()
         end
         i=1
     end
-    
+    if(f:key("tab"))then
+        ui_draw=false
+    else
+        ui_draw=true
+    end
+
 
 
     function love.keyreleased(key)
@@ -384,29 +391,33 @@ function love.draw()
     f:rgb(255,math.cos(flc)*128+128,255)
     f:drawall(cur,mx*8+4,my*8+4,0,4,4,math.cos(flc)/4+1,math.cos(flc)/4+1)
     f:rgb(255,255,255)
-    f:draw(ui2,0,-16+uil)
-    f:draw(ui1,0,0)
+    f:condraw(ui_draw,ui2,0,-16+uil)
+    f:condraw(ui_draw,ui1,0,0)
 
     i=1
     while(i<=ba)do
         
-        f:draw(bc(slc+i)[5],22+(10*i),-14+uil)
+        f:condraw(ui_draw,bc(slc+i)[5],24+(10*i),2+uil)
         i=i+1
     end
     --f:rgb(math.sin(flc)*128+128,128,0)
     f:rgb(255,math.sin(flc)*128+128,255)
     f:rgb(0,0,0)
-    love.graphics.print(bc(slc)[4],5*g_s,0*g_s,0,2,2)
+    if(ui_draw)then
+        love.graphics.print(bc(slc)[4],34*g_s,0*g_s,0,2,2)
+    end
     f:rgb(255,math.sin(flc)*128+128,255)
-    love.graphics.print(bc(slc)[4],6*g_s,0*g_s,0,2,2)
-
-    love.graphics.print(amount[slc+1],9*g_s,20*g_s,0,2,2)
-
+    if(ui_draw)then
+        love.graphics.print(bc(slc)[4],33*g_s,0*g_s,0,2,2)
+    end
+    if(ui_draw)then
+        love.graphics.print(amount[slc+1],9*g_s,20*g_s,0,2,2)
+    end
     f:rgb(255,255,255)
-
+    if(ui_draw)then
     f:drawr(void,16,16,flc/2,5,5)
     f:drawr(bc(slc)[5],16,16,flc/2,4,4)
-    
+    end
     
     f:rgb(255,math.cos(flc)*128+128,255)
     f:drawr(cur2,love.mouse.getX()/3,love.mouse.getY()/3,flc,4,4)
