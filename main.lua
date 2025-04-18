@@ -236,6 +236,15 @@ function love.update()
         winsz=384
         love.window.setMode(winsz,winsz)
     end
+    if(f:key("m"))then
+        i=1
+        while(i<=ba)do
+            amount[i=999]
+            i=i+1
+        end
+        i=1
+    end
+    
 
 
     function love.keyreleased(key)
