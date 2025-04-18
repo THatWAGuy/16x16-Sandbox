@@ -12,6 +12,8 @@ This game is still very early in development, it's only *barely* not a block pai
 
 **Q** and **E** to cycle between blocks
 
+**M** to give 999 of everything
+
 **4** to toggle rendering air as a block
 
 **5** to toggle music
