@@ -10,7 +10,7 @@ This game is still very early in development, it's only *barely* not a block pai
 
 **Right Click** to Break Block
 
-**Minus** and **Plus** to cycle between blocks
+**Q** and **E** to cycle between blocks
 
 **4** to toggle rendering air as a block
 
@@ -31,7 +31,3 @@ there are more things you can do with the other number keys, but they're kinda b
 ### ***THIS IS A SIDE-PROJECT!!***
 
 ***Do not expect frequent updates.***
-
-## **Devlog**
-
-currently working on a devlog, link will be here when it's done
