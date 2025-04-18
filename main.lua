@@ -238,8 +238,8 @@ function love.update()
     end
     if(f:key("m"))then
         i=1
-        while(i<=ba)do
-            amount[i=999]
+        while(i<=(ba+1))do
+            amount[i]=999
             i=i+1
         end
         i=1
