@@ -4,7 +4,7 @@ function love.load()
 
     ui_draw=true
 
-    uil=-32
+    uil=-16
 
     love.mouse.setVisible(false)
 
@@ -418,13 +418,12 @@ function love.draw()
     f:rgb(255,math.sin(flc)*128+128,255)
     f:rgb(0,0,0)
     if(ui_draw)then
-        love.graphics.print(bc(slc)[4],34*g_s,0*g_s,0,2,2)
+        love.graphics.print(bc(slc)[4],(21+uil)*g_s,0*g_s,0,2,2)
+        love.graphics.print(amount[slc+1],8*g_s,20*g_s,0,2,2)
     end
     f:rgb(255,math.sin(flc)*128+128,255)
     if(ui_draw)then
-        love.graphics.print(bc(slc)[4],33*g_s,0*g_s,0,2,2)
-    end
-    if(ui_draw)then
+        love.graphics.print(bc(slc)[4],(22+uil)*g_s,0*g_s,0,2,2)
         love.graphics.print(amount[slc+1],9*g_s,20*g_s,0,2,2)
     end
     f:rgb(255,255,255)
