@@ -149,7 +149,7 @@ end
 
 
 
-function love.update()
+function love.update(dt)
 
     if(musicplay)then
         f:plays(muspiano)
