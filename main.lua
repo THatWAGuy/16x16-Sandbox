@@ -37,6 +37,7 @@ function love.load()
 
     ui1=f:lspr("spr/ui/ui1.png")
     ui2=f:lspr("spr/ui/ui2.png")
+    slcspr=f:lspr("spr/ui/slc.png")
 
     void=f:lspr("spr/block/void.png")
     none=f:lspr("spr/block/none.png")
@@ -397,7 +398,20 @@ function love.draw()
     i=1
     while(i<=ba)do
         
-        f:condraw(ui_draw,bc(slc+i)[5],24+(10*i),2+uil)
+        f:condraw(ui_draw,bc(i)[5],27+(10*i),-6+uil)
+        if(i==slc)then
+            f:condraw(ui_draw,slcspr,25+(10*i),-8+uil)
+        end
+        i=i+1
+    end
+    i=1
+    while(i<=ba)do
+        if(ui_draw)then
+            f:rgb(0,0,0)
+            love.graphics.print(amount[i+1],(32+(10*i))*g_s,(0+uil)*g_s)
+            f:rgb(255,math.sin(flc)*128+128,255)
+            love.graphics.print(amount[i+1],(33+(10*i))*g_s,(0+uil)*g_s)
+        end
         i=i+1
     end
     --f:rgb(math.sin(flc)*128+128,128,0)
