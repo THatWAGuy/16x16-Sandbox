@@ -40,6 +40,21 @@ function love.load()
     slcspr=f:lspr("spr/ui/slc.png")
 
     void=f:lspr("spr/block/void.png")
+    gls=f:lspr("spr/block/glass.png")
+
+    plk=f:lspr("spr/block/planks.png")
+    plku=f:lspr("spr/block/planksoutl.png")
+
+    brk=f:lspr("spr/block/bricks.png")
+    brku=f:lspr("spr/block/bricksoutl.png")
+
+    irn1=f:lspr("spr/block/iron1.png")
+    irn2=f:lspr("spr/block/iron2.png")
+    irn3=f:lspr("spr/block/iron3.png")
+    irn4=f:lspr("spr/block/iron4.png")
+    irnanim=irn1
+    irnu=f:lspr("spr/block/ironoutl.png")
+
     none=f:lspr("spr/block/none.png")
     out=f:lspr("spr/block/outl.png")
     outd=f:lspr("spr/block/outld.png")
@@ -76,7 +91,7 @@ function love.load()
     love.window.setMode(384,384)
     love.window.setTitle("16x16 Sandbox! "..version)
     love.window.setIcon(love.image.newImageData("spr/block/icon.png"))
-    ba=5
+    ba=9
 
     flc=0
 
@@ -90,6 +105,10 @@ function love.load()
         elseif(num==3)then return {60,126,31,"Grass",grs,outg} 
         elseif(num==4)then return {248,87,0,"Magma stone",mga_anim,outm} 
         elseif(num==5)then return {255,89,0,"Fire grass",mgag_anim,outmg} 
+        elseif(num==6)then return {255,89,0,"Planks",plk,plku} 
+        elseif(num==7)then return {255,89,0,"Bricks",brk,brku} 
+        elseif(num==8)then return {255,89,0,"Glass",gls,none} 
+        elseif(num==9)then return {255,89,0,"Iron",irnanim,irnu} 
 
 
         else return {255,0,255,"error",ukn,outu} end
@@ -118,7 +137,7 @@ function love.load()
                      1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
                     }
 
-    amount={0,100,50,25,10,10}
+    amount={0,100,50,25,10,10,50,50,50,10}
 
 end
 
@@ -164,18 +183,22 @@ function love.update(dt)
         if(animstage==1)then 
             mga_anim=mga1 
             mgag_anim=mgag1 
+            irnanim=irn2
             animstage=2
         elseif(animstage==2)then 
             mga_anim=mga2 
             mgag_anim=mgag2 
+            irnanim=irn3
             animstage=3
         elseif(animstage==3)then 
             mga_anim=mga3 
             mgag_anim=mgag3 
+            irnanim=irn4
             animstage=4
         elseif(animstage==4)then 
             mga_anim=mga 
             mgag_anim=mgag 
+            irnanim=irn1
             animstage=1
         end
 
@@ -403,8 +426,23 @@ function love.draw()
             f:condraw(ui_draw,slcspr,25+(10*i),-8+uil)
         end
         i=i+1
+        if(i==9)then
+            i=10
+        end
     end
+    i=9
+    while(i<=ba)do
+        
+        f:condraw(ui_draw,bc(i)[5],27+(10*i)-80,3+uil)
+        if(i==slc)then
+            f:condraw(ui_draw,slcspr,25+(10*i)-80,1+uil)
+        end
+        i=i+1
+    end
+
+
     i=1
+
     while(i<=ba)do
         if(ui_draw)then
             f:rgb(0,0,0)
@@ -413,7 +451,24 @@ function love.draw()
             love.graphics.print(amount[i+1],(33+(10*i))*g_s,(0+uil)*g_s)
         end
         i=i+1
+        if(i==9)then
+            i=10
+        end
     end
+    
+    i=9
+    
+    while(i<=ba)do
+        if(ui_draw)then
+            f:rgb(0,0,0)
+            love.graphics.print(amount[i+1],(32+(10*i)-80)*g_s,(9+uil)*g_s)
+            f:rgb(255,math.sin(flc)*128+128,255)
+            love.graphics.print(amount[i+1],(33+(10*i)-80)*g_s,(9+uil)*g_s)
+        end
+        i=i+1
+    end
+
+    
     --f:rgb(math.sin(flc)*128+128,128,0)
     f:rgb(255,math.sin(flc)*128+128,255)
     f:rgb(0,0,0)
