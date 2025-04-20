@@ -48,6 +48,9 @@ function love.load()
     brk=f:lspr("spr/block/bricks.png")
     brku=f:lspr("spr/block/bricksoutl.png")
 
+    mgad=f:lspr("spr/block/magmadirt.png")
+    mgadu=f:lspr("spr/block/magmadirtoutl.png")
+
     irn1=f:lspr("spr/block/iron1.png")
     irn2=f:lspr("spr/block/iron2.png")
     irn3=f:lspr("spr/block/iron3.png")
@@ -91,24 +94,27 @@ function love.load()
     love.window.setMode(384,384)
     love.window.setTitle("16x16 Sandbox! "..version)
     love.window.setIcon(love.image.newImageData("spr/block/icon.png"))
-    ba=9
+    ba=10
 
     flc=0
 
     anim=0
 
-    function bc(num)
+    function no_interaction(x,y,w) --[[do nothing]] end
 
-        if(num==0)then return {0,255,0,"air",none,none} 
-        elseif(num==1)then return {141,141,141,"Stone",stn,out} 
-        elseif(num==2)then return {151,105,73,"Dirt",drt,outd} 
-        elseif(num==3)then return {60,126,31,"Grass",grs,outg} 
-        elseif(num==4)then return {248,87,0,"Magma stone",mga_anim,outm} 
-        elseif(num==5)then return {255,89,0,"Fire grass",mgag_anim,outmg} 
-        elseif(num==6)then return {255,89,0,"Planks",plk,plku} 
-        elseif(num==7)then return {255,89,0,"Bricks",brk,brku} 
-        elseif(num==8)then return {255,89,0,"Glass",gls,none} 
-        elseif(num==9)then return {255,89,0,"Iron",irnanim,irnu} 
+    function bc(num)
+        --                    | color |name | sprites |inter| function to do              |
+        if(num==0)then     return {0,255,0,"air",none,none,false, no_interaction()} 
+        elseif(num==1)then return {141,141,141,"Stone",stn,out,false, no_interaction()} 
+        elseif(num==2)then return {151,105,73,"Dirt",drt,outd,false, no_interaction()} 
+        elseif(num==3)then return {60,126,31,"Grass",grs,outg,false, no_interaction()} 
+        elseif(num==4)then return {248,87,0,"Magma stone",mga_anim,outm,false, no_interaction()} 
+        elseif(num==5)then return {255,89,0,"Fire grass",mgag_anim,outmg,false, no_interaction()} 
+        elseif(num==6)then return {255,89,0,"Planks",plk,plku,false, no_interaction()} 
+        elseif(num==7)then return {255,89,0,"Bricks",brk,brku,false, no_interaction()} 
+        elseif(num==8)then return {255,89,0,"Glass",gls,none,false, no_interaction()} 
+        elseif(num==9)then return {255,89,0,"Iron",irnanim,irnu,false, no_interaction()} 
+        elseif(num==10)then return {255,89,0,"Magma dirt",mgad,mgadu,false, no_interaction()} 
 
 
         else return {255,0,255,"error",ukn,outu} end
@@ -137,7 +143,7 @@ function love.load()
                      1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
                     }
 
-    amount={0,100,50,25,10,10,50,50,50,10}
+    amount={0,100,50,25,10,10,50,50,50,10,20}
 
 end
 
